@@ -50,31 +50,31 @@ dotnet run
   Yeni kullanıcı kayıt sayfası.
  
 ### Kitap İşlemleri
-- **Kitaplar**: `/Book`
+- **Kitaplar**: `/Book`  
   Kitapların listelendiği sayfa.
-- **Kitaplar**: `/Book/Detail/{id}`
+- **Kitaplar**: `/Book/Detail/{id}`  
   Kitaba ait detay sayfası.
 
 ### Rol İşlemleri
-- **Rol Atama**: `/Role/AssignRole/{userId}`
+- **Rol Atama**: `/Role/AssignRole/{userId}`  
   Admin'in, kullanıcıya rol atadığı sayfa.
-- **Rol Oluşturma**: `/Role/Create`
+- **Rol Oluşturma**: `/Role/Create`  
   Admin'in, rol oluşturduğu sayfa.
-- **Rol Güncelleme**: `/Role/Edit/{id}`
+- **Rol Güncelleme**: `/Role/Edit/{id}`  
   Admin'in, rol güncellediği sayfa.
-- **Roller**: `/Role`
+- **Roller**: `/Role`  
   Adminin, rolleri listelediği sayfa.
-- **Roller**: `/Role/Delete`
+- **Roller**: `/Role/Delete`  
   Admin'in, rol silmek için kullandığı uç nokta (Burası bir sayfa değildir).
 
 ### Kullanıcı İşlemleri
-- **Kullanıcı Detay**: `/User/Details/{id}`
+- **Kullanıcı Detay**: `/User/Details/{id}`  
   Kullanıcının kendi bilgilerini veya Admin'in bir kullanıcı bilgilerini görüntülediği sayfa.
-- **Kullanıcı Güncelleme**: `/User/Edit/{id}`
+- **Kullanıcı Güncelleme**: `/User/Edit/{id}`  
   Kullanıcının kendi bilgilerini veya Admin'in bir kullanıcı bilgilerini güncellediği sayfa.
-- **Kullanıcılar**: `/User`
+- **Kullanıcılar**: `/User`  
   Adminin, kullanıcıları listelediği sayfa.
-- **Kullanıcı Silme**: `/User/Delete`
+- **Kullanıcı Silme**: `/User/Delete`  
   Kullanıcının kendi hesabını silmek için veya Admin'in bir hesabı silmek için kullandığı uç nokta (Burası bir sayfa değildir).
 
 ## Not
