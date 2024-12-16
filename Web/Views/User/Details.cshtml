@@ -1,0 +1,62 @@
+﻿@model Domain.Authentication.ApplicationUser
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Kullanıcı Detayları</h2>
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4 class="card-title">Kullanıcı Bilgileri</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <strong>Ad Soyad:</strong>
+                        <p>@Model.FullName</p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Kullanıcı Adı:</strong>
+                        <p>@Model.UserName</p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>E-Posta:</strong>
+                        <p>@Model.Email</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="button" class="btn btn-warning">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Edit" asp-route-id="@Model.Id">Bilgileri Düzenle</a>
+                </button>
+
+                <button type="button" class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    Hesabı Sil
+                </button>
+            </div>
+
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Hesabı Sil</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Bu hesabı silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                            <form asp-action="Delete" asp-controller="User" method="post">
+                                <input type="hidden" name="id" value="@Model.Id" />
+                                <button type="submit" class="btn btn-danger">Sil</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿.pagination .page-item.active .page-link {
+    background-color: #007bff; /* Aktif sayfanın arka planını mavi yapar */
+    border-color: #007bff; /* Aktif sayfa butonunun kenarlığını mavi yapar */
+}
+
+.page-link {
+    color: #007bff; /* Sayfa linklerinin rengini mavi yapar */
+    font-size: 16px; /* Font boyutunu ayarlar */
+    padding: 8px 16px; /* Butonların içine boşluk ekler */
+}
+
+    .page-link:hover {
+        background-color: #f1f1f1; /* Hoverda arka plan rengini değiştirir */
+        color: #0056b3; /* Hoverda metin rengini koyu mavi yapar */
+    }
+
+.page-item {
+    margin: 0 5px; /* Butonlar arasına boşluk ekler */
+}

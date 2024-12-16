@@ -1,0 +1,50 @@
+﻿@using Domain.Authentication
+@model List<ApplicationRole>
+
+<div class="container">
+    <h2>Roller</h2>
+    <a class="btn btn-primary mb-3" asp-controller="Role" asp-action="Create">Yeni Rol Oluştur</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rol Adı</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@role.Name</td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Role" asp-route-id="@role.Id.ToString()" class="btn btn-warning btn-sm">Düzenle</a>
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteRoleModal">
+                            Sil
+                        </button>
+
+                        <div class="modal fade" id="deleteRoleModal" tabindex="-1" aria-labelledby="deleteRoleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteRoleModalLabel">Sil</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bu rolü silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                                        <form asp-action="Delete" asp-controller="Role" method="post">
+                                            <input type="hidden" name="id" value="@role.Id" />
+                                            <button type="submit" class="btn btn-danger">Sil</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

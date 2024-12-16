@@ -1,0 +1,44 @@
+﻿@model Web.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Giriş Yap</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form asp-action="Login" method="post">
+                        <input type="hidden" name="ReturnUrl" value="@Context.Request.Query["ReturnUrl"]" />
+                        <div class="mb-3">
+                            <label for="UserName" class="form-label">Kullanıcı adı</label>
+                            <input type="text" asp-for="UserName" class="form-control" id="UserName" placeholder="Kullanıcı adını girin" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Parola</label>
+                            <input type="password" asp-for="Password" class="form-control" id="Password" placeholder="Parolanızı girin" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input type="checkbox" asp-for="RememberMe" class="form-check-input" id="RememberMe" />
+                            <label class="form-check-label" for="RememberMe">Beni Hatırla</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+}

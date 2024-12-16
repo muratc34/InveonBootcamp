@@ -1,0 +1,28 @@
+﻿@model Application.DTOs.GetBookDto
+
+@{
+    ViewData["Title"] = "Kitap Detayı";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1> @Model.Title</h1>
+            <p><strong>Id:</strong> @Model.Id</p>
+            <p><strong>Yazar:</strong> @Model.Author</p>
+            <p><strong>Yayınevi:</strong> @Model.Publisher</p>
+            <p><strong>Yıl:</strong> @Model.PublicationYear</p>
+            <p><strong>Tür:</strong> @Model.Genre</p>
+            <p><strong>Sayfa Sayısı:</strong> @Model.PageCount</p>
+            <p><strong>Dil:</strong> @Model.Language</p>
+            <p><strong>ISBN:</strong> @Model.ISBN</p>
+            <p><strong>Mevcut Kopyalar:</strong> @Model.AvailableCopies</p>
+
+            <h4>Özet</h4>
+            <p>@Model.Summary</p>
+
+            <hr />
+            <a href="@Url.Action("Index", "Book")" class="btn btn-secondary">Geri</a>
+        </div>
+    </div>
+</div>
